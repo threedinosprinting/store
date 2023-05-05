@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins',sans-serif;
+}
+
+body
+{
+    background:#000;
+    font-family: 'Overpass Mono', monospace;
+}
+
+.about-text{
+    padding-top: 5%;
+}
+.about-text h2{
+    color: #1ae74def;
+    font-family: 'Poppins', sans-serif;
+    font-size: 60px;
+}
+
+.about-text h5{
+    color: #1ae74dc9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+}
+
+.about-text h1{
+    color: #35df5fa9;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+
+.about-text p{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 19px;
+    color: #fff;
+}

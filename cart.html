@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Cart</title>
+	<link rel="stylesheet" type="text/css" href="cart_style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="menu">
+				<ul>
+					<li><a href="index.html">Go Home</a></li>
+					<li><a href="products.html">Products</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<h2>Items in the cart:</h2>
+		<div id="cart-items">
+		</div>
+		<div id="cart-buttons">
+			<button id="empty-cart-button">Empty Cart</button>
+			<button id="buy-cart-item">Buy items in cart</button> 
+		</div>
+		<script type="text/javascript">
+			// Function to calculate the total price of the cart
+			function calculateTotal() {
+				var cart = JSON.parse(localStorage.getItem('cart')) || [];
+				var total = 0;
+				for (var i = 0; i < cart.length; i++) {
+					total += cart[i].price * cart[i].quantity;
+				}
+				return total.toFixed(2);
+			}
+			
+			// Function to display the items in the cart
+			function displayCart() {
+				var cart = JSON.parse(localStorage.getItem('cart')) || [];
+				var cartItems = document.getElementById('cart-items');
+				cartItems.innerHTML = '';
+				if (cart.length === 0) {
+					cartItems.innerHTML = '<p>Your cart is empty.</p>';
+				} else {
+					for (var i = 0; i < cart.length; i++) {
+						var item = cart[i];
+						var itemTotal = item.price * item.quantity;
+						var itemHTML = `
+							<div class="cart-item">
+								<div class="item-name">Item: ${item.name}</div>
+								<div class="item-price">Price: ${item.price.toFixed(2)}$</div>
+								<div class="item-quantity">Qantity: ${item.quantity}</div>
+								<div class="item-total">Item total:${itemTotal.toFixed(2)}</div>
+								<div>|</div><div>|</div><div>|</div>
+							</div>
+						`;
+						cartItems.innerHTML += itemHTML;
+					}
+					cartItems.innerHTML += `
+						<div class="cart-total">
+							<span>Total: $${calculateTotal()}</span>
+						</div>
+					`;
+				}
+			}
+			
+			// Function to clear the cart
+			function clearCart() {
+				localStorage.removeItem('cart');
+				displayCart();
+			}
+			
+			// Call the displayCart function when the page loads
+			window.onload = function() {
+				displayCart();
+				document.getElementById('empty-cart-button').addEventListener('click', clearCart);
+			};
+		</script>
+	</main>
+</body>
+</html>

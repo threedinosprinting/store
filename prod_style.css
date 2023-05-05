@@ -1,0 +1,164 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+::selection{
+  color: #000;
+  background: #fff;
+}
+nav{
+  position: flex;
+  background: #1f1f1f;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 12;
+}
+nav .menu{
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.menu ul{
+  display: inline-flex;
+  margin-left: auto;
+}
+
+.menu ul li{
+  list-style: none;
+  margin-left: 7px;
+}
+.menu ul li:first-child{
+  margin-left: 0px;
+}
+.menu ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.menu ul li a:hover{
+  background: #fff;
+  color: black;
+  border-radius: 100px;
+}
+
+
+.container {
+  
+  flex-wrap: wrap;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: center;
+text-align: center;
+}
+.btn{
+width: 150px;
+height: 50px;
+border: none;
+color: rgb(253, 253, 253);
+background-color: rgb(32, 32, 32);
+border-radius: 4px;
+transition: ease-out 0.8s;
+font-size: 1rem;
+outline: none;
+border: 2.5px solid #0000009d;
+position: relative;
+z-index: 1;
+}
+
+.btn:hover{
+color: #000000;
+cursor: pointer;
+}
+
+.btn::before{
+transition: 0.5s all ease;
+position: absolute;
+top: 0;
+left: 50%;
+right: 50%;
+bottom: 0;
+opacity: 0;
+content: "";
+background-color: #00ff22e3;
+}
+
+.btn:hover::before{
+transition: 0,5s all ease;
+left: 0;
+right: 0;
+opacity: 1;
+z-index: -1;
+}
+
+
+
+
+
+body {
+margin: 0;
+padding: 0;
+height: 100%;
+}
+
+.content {
+min-height: calc(100% - [height of footer]);
+/* Replace [height of footer] with the actual height of your footer */
+/* For example, if your footer is 50px high, use: min-height: calc(100% - 50px); */
+}
+
+footer {
+height: [height of footer];
+/* Replace [height of footer] with the actual height of your footer */
+/* For example, if your footer is 50px high, use: height: 50px; */
+position: fixed;
+bottom: 0;
+left: 0;
+right: 0;
+/* Add any other styles for your footer here */
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 0 10px;
+}
+.product {
+  width: 300px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.product img {
+  max-width: 100%;
+  height: auto;
+}
+.product h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+.product p {
+  font-size: 18px;
+}
+
+
+
+.footer {
+  background-color: #1b1b1b;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+}
